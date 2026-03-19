@@ -1,355 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Persona Profile | Suzhou Grand Canal</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 420px;
-            margin: 0 auto;
-        }
-
-        .header {
-            text-align: center;
-            color: white;
-            margin-bottom: 20px;
-        }
-
-        .header h1 {
-            font-size: 1.4rem;
-            font-weight: 600;
-        }
-
-        .header p {
-            opacity: 0.9;
-            font-size: 0.9rem;
-        }
-
-        .persona-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-        }
-
-        .profile-header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            padding: 30px 20px;
-            text-align: center;
-            color: white;
-        }
-
-        .profile-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid white;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
-
-        .profile-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .profile-type {
-            display: inline-block;
-            background: #667eea;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .profile-quote {
-            font-style: italic;
-            opacity: 0.9;
-            margin-top: 15px;
-            font-size: 0.95rem;
-        }
-
-        .section {
-            padding: 20px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .section:last-child {
-            border-bottom: none;
-        }
-
-        .section-title {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #667eea;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-
-        .info-item {
-            background: #f8f9fa;
-            padding: 12px;
-            border-radius: 10px;
-        }
-
-        .info-label {
-            font-size: 0.7rem;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .info-value {
-            font-weight: 600;
-            color: #333;
-            font-size: 0.95rem;
-        }
-
-        .bio-text {
-            color: #555;
-            font-size: 0.95rem;
-        }
-
-        .goals-list, .frustrations-list {
-            list-style: none;
-        }
-
-        .goals-list li, .frustrations-list li {
-            padding: 10px 0;
-            padding-left: 30px;
-            position: relative;
-            color: #555;
-            font-size: 0.95rem;
-        }
-
-        .goals-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #28a745;
-            font-weight: bold;
-        }
-
-        .frustrations-list li::before {
-            content: "✗";
-            position: absolute;
-            left: 0;
-            color: #dc3545;
-            font-weight: bold;
-        }
-
-        .tech-comfort {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .tech-bar {
-            flex: 1;
-            height: 8px;
-            background: #eee;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .tech-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 4px;
-        }
-
-        .tech-label {
-            font-size: 0.8rem;
-            color: #888;
-            min-width: 80px;
-        }
-
-        .devices {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .device-tag {
-            background: #e8f4f8;
-            color: #0077b6;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-        }
-
-        .persona-nav {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .nav-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.4);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .nav-dot.active {
-            background: white;
-            transform: scale(1.2);
-        }
-
-        .nav-dot:hover {
-            background: rgba(255,255,255,0.8);
-        }
-
-        .persona-label {
-            color: white;
-            font-size: 0.75rem;
-            text-align: center;
-            margin-top: 8px;
-            opacity: 0.9;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suzhou Grand Canal · Chang Gate</title>
+  <!-- Link to external style.css (separate file) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts for extra cuteness -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Suzhou Grand Canal</h1>
-            <p>User Personas — Mobile Experience</p>
-        </div>
+  <div class="container">
+    <!-- header with project brief -->
+    <header>
+      <h1>✨ wanderLENS ✨</h1>
+      <div class="subhead">interactive · playful · heritage</div>
+    </header>
 
-        <div class="persona-card">
-            <div class="profile-header">
-                <img 
-                    src="[images.unsplash.com](https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face)" 
-                    alt="Profile photo of Lin Mei" 
-                    class="profile-image"
-                >
-                <div class="profile-name">Lin Mei</div>
-                <span class="profile-type">Primary Persona — Visitor</span>
-                <p class="profile-quote">"I want to feel the history, not just read about it."</p>
-            </div>
-
-            <div class="section">
-                <div class="section-title">Demographics</div>
-                <div class="info-grid">
-                    <div class="info-item">
-                        <div class="info-label">Age</div>
-                        <div class="info-value">32</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">Occupation</div>
-                        <div class="info-value">UX Designer</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">Location</div>
-                        <div class="info-value">Shanghai</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">Status</div>
-                        <div class="info-value">Weekend Visitor</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-title">Background</div>
-                <p class="bio-text">
-                    Lin is a tech-savvy professional who enjoys cultural day trips from Shanghai. She prefers self-guided exploration over tour groups and relies heavily on her smartphone for navigation, photos, and discovering hidden gems. She values authentic local experiences and often shares her adventures on social media.
-                </p>
-            </div>
-
-            <div class="section">
-                <div class="section-title">Goals</div>
-                <ul class="goals-list">
-                    <li>Discover historical sites with rich multimedia stories</li>
-                    <li>Find authentic local food near canal attractions</li>
-                    <li>Navigate easily without getting lost in old town alleys</li>
-                    <li>Capture and share photo-worthy moments</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <div class="section-title">Frustrations</div>
-                <ul class="frustrations-list">
-                    <li>Information signs are text-heavy and boring</li>
-                    <li>Hard to know which spots are worth visiting</li>
-                    <li>Maps don't show pedestrian-friendly routes</li>
-                    <li>No easy way to find quiet, less crowded areas</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <div class="section-title">Technology</div>
-                
-                <div class="tech-comfort">
-                    <span class="tech-label">Tech Comfort</span>
-                    <div class="tech-bar">
-                        <div class="tech-fill" style="width: 90%;"></div>
-                    </div>
-                    <span style="font-size: 0.85rem; color: #667eea;">High</span>
-                </div>
-
-                <div class="tech-comfort">
-                    <span class="tech-label">Mobile Usage</span>
-                    <div class="tech-bar">
-                        <div class="tech-fill" style="width: 95%;"></div>
-                    </div>
-                    <span style="font-size: 0.85rem; color: #667eea;">Very High</span>
-                </div>
-
-                <div style="margin-top: 15px;">
-                    <div class="info-label" style="margin-bottom: 8px;">Primary Devices</div>
-                    <div class="devices">
-                        <span class="device-tag">📱 iPhone 15</span>
-                        <span class="device-tag">⌚ Apple Watch</span>
-                        <span class="device-tag">🎧 AirPods</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-title">Scenario</div>
-                <p class="bio-text">
-                    Lin arrives at Suzhou Station on a Saturday morning. She opens the canal guide app to find a walking route that covers key historical sites within 3 hours. She wants audio guides she can listen to while walking, real-time crowd info, and restaurant recommendations for lunch by the water.
-                </p>
-            </div>
-        </div>
-
-        <!-- Navigation dots for multiple personas -->
-        <div class="persona-nav">
-            <div class="nav-dot active" title="Lin Mei - Visitor"></div>
-            <div class="nav-dot" title="Uncle Zhang - Resident"></div>
-            <div class="nav-dot" title="Tom & Sarah - Tourists"></div>
-        </div>
-        <p class="persona-label">Primary • Secondary • Secondary</p>
+    <!-- intro section: Suzhou Grand Canal (Chang Gate) -->
+    <div class="intro-card">
+      <div class="landmark-name">
+        🚤  Suzhou Grand Canal <span>Chang Gate</span>
+      </div>
+      <p style="font-size: 1.4rem; margin: 0.5rem 0 0.8rem; background: #ffefcf; padding: 0.4rem 1.2rem; border-radius: 40px; width: fit-content; border: 3px solid #d48f5c;">
+        🌿 park · history · waterside 🌿
+      </p>
+      <div class="badge-tbd">✨ FEATURE STATUS: TO BE UPDATED ✨</div>
+      <div class="feature-desc">
+        ⏳ soon: AR trails · audio stories · hidden spots
+      </div>
+      <p style="margin-top: 1.8rem; font-size: 1.2rem; background: white; padding: 0.8rem 1.8rem; border-radius: 50px; border: 2px solid #4b8b8b;">
+        <strong>the big idea:</strong> an interactive app that makes every visit to the Grand Canal a playful adventure — whether you're strolling by the old willow trees or discovering the stories of Chang Gate.
+      </p>
     </div>
+
+    <!-- TEAM OF DEVELOPERS (4 members, placeholder pics, Member 1..4) -->
+    <h2 style="font-size: 2.5rem; margin: 1.8rem 0 0.5rem; background: #b0d9b1; display: inline-block; padding: 0.2rem 2rem; border-radius: 60px 12px; border: 4px solid #418a7a;">👩‍💻 meet the makers 👨‍💻</h2>
+    <div class="team-grid">
+      <!-- member 1 -->
+      <div class="member-card">
+        <div class="profile-pic"></div>
+        <div class="member-name">Member 1</div>
+        <div class="member-role">✨ code whisperer</div>
+      </div>
+      <!-- member 2 -->
+      <div class="member-card">
+        <div class="profile-pic"></div>
+        <div class="member-name">Member 2</div>
+        <div class="member-role">🎨 playful design</div>
+      </div>
+      <!-- member 3 -->
+      <div class="member-card">
+        <div class="profile-pic"></div>
+        <div class="member-name">Member 3</div>
+        <div class="member-role">🗺️ story & lore</div>
+      </div>
+      <!-- member 4 -->
+      <div class="member-card">
+        <div class="profile-pic"></div>
+        <div class="member-name">Member 4</div>
+        <div class="member-role">📱 app wizard</div>
+      </div>
+    </div>
+
+    <!-- PERSONAS (2 types: tech-savvy tourist + family traveler) -->
+    <div class="persona-section">
+      <h2>🗣️ real (fake) reviews</h2>
+      <div class="persona-grid">
+        <!-- persona 1: tech-savvy tourist -->
+        <div class="persona-card">
+          <div class="persona-header">
+            <div class="persona-avatar tourist"></div>
+            <div class="persona-title">
+              <h3>Alex · tech-savvy</h3>
+              <span style="background:#4ec4b0; padding:0.2rem 1rem; border-radius:30px; color:white;">#digitalnomad</span>
+            </div>
+          </div>
+          <div class="persona-review">
+            “The app isn't fully built yet – but the concept is brilliant! As a tech lover, I can't wait for the AR overlay to show me how the canal looked during Ming dynasty. Even the placeholder design made me smile.”
+          </div>
+          <div class="rating">📱⚡⚡⚡⚡ (4/5 excited)</div>
+        </div>
+        <!-- persona 2: family traveler -->
+        <div class="persona-card">
+          <div class="persona-header">
+            <div class="persona-avatar family"></div>
+            <div class="persona-title">
+              <h3>The Chens · family</h3>
+              <span style="background:#f59c5f; padding:0.2rem 1rem; border-radius:30px;">+ two kids</span>
+            </div>
+          </div>
+          <div class="persona-review">
+            “We visited Chang Gate last spring. The kids loved running along the canal. If the app adds a scavenger hunt with panda cartoons, we’ll definitely be back! Super playful vibe – our 6‑year old already drew the logo.”
+          </div>
+          <div class="rating">🧸🧸🧸🧸🧸 (5/5 fun)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- tiny extra detail: playful footer -->
+    <div class="footer-note">
+      🌟  Suzhou Grand Canal (Chang Gate)  ·  app concept “to be updated”  ·  bright & playful edition  🌟
+    </div>
+  </div>
 </body>
 </html>
-
