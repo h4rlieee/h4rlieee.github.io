@@ -110,8 +110,20 @@ section h2 {
     border: 3px solid #3498db;
     display: inline-block;
 }
+.dev-card:nth-child(1) .profile-pic {
+    background-image: url('RedGhost.png');
+}
+.dev-card:nth-child(2) .profile-pic {
+    background-image: url('BlueGhost.png');
+}
+.dev-card:nth-child(3) .profile-pic {
+    background-image: url('OrangeGhost.png');
+}
+.dev-card:nth-child(4) .profile-pic {
+    background-image: url('PinkGhost.png');
+}
 
-/* Footer */
+
 footer {
     text-align: center;
     padding: 2rem;
