@@ -108,13 +108,10 @@ section h2 {
     background-color: #e0e0e0;
     margin: 0 auto 1rem;
     border: 3px solid #3498db;
-    display: block;  /* Change from inline-block to block */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    display: inline-block;
 }
 .dev-card:nth-child(1) .profile-pic {
-    background-image: url('./images/RedGhost.png');
+    background-image: url('RedGhost.png');
 }
 .dev-card:nth-child(2) .profile-pic {
     background-image: url('BlueGhost.png');
