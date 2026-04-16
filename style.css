@@ -102,8 +102,8 @@ section h2 {
 }
 
 .profile-pic {
-    width: 120px;
-    height: 120px;
+    width: 125px;
+    height: 125px;
     border-radius: 50%;
     background-color: #e0e0e0;
     margin: 0 auto 1rem;
@@ -111,7 +111,7 @@ section h2 {
     display: inline-block;
 }
 .dev-card:nth-child(1) .profile-pic {
-    background-image: url('ReddGhos.png');
+    background-image: url('ReddGhost.png');
 }
 .dev-card:nth-child(2) .profile-pic {
     background-image: url('BlueGhost.png');
