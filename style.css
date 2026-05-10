@@ -1,3 +1,4 @@
+/* ---------- RESET & BASE ---------- */
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +18,7 @@ body {
   padding: 2rem 1.5rem;
 }
 
+/* ---------- TYPOGRAPHY ---------- */
 h1 {
   font-size: 2.2rem;
   font-weight: 500;
@@ -42,16 +44,19 @@ h3 {
   margin-top: 0.25rem;
 }
 
+/* ---------- HEADER ---------- */
 .site-header {
   text-align: center;
   padding: 2rem 0 1rem;
   border-bottom: 1px solid #e6e3dc;
 }
 
+/* ---------- SECTIONS ---------- */
 section {
   margin: 3.5rem 0;
 }
 
+/* Motivation box */
 .motivation-box {
   background: #f6f4f0;
   padding: 2rem;
@@ -72,6 +77,7 @@ section {
   font-weight: 450;
 }
 
+/* Horizontal timeline */
 .timeline-horizontal {
   display: flex;
   justify-content: space-between;
@@ -108,6 +114,7 @@ section {
   line-height: 1.4;
 }
 
+/* Demo grid (2 cards) */
 .demo-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -167,6 +174,7 @@ section {
   margin-bottom: 1rem;
 }
 
+/* Feature mini grid */
 .feature-mini-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -188,7 +196,7 @@ section {
   margin-bottom: 0.3rem;
 }
 
-
+/* Personas */
 .persona-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -214,6 +222,7 @@ section {
   margin-top: 0.5rem;
 }
 
+/* Tech row */
 .tech-row {
   background: #f6f4f0;
   border-radius: 48px;
@@ -230,6 +239,7 @@ section {
   color: #2c2b28;
 }
 
+/* QR block */
 .qr-block {
   text-align: center;
   background: #ffffff;
@@ -249,25 +259,79 @@ section {
   font-family: monospace;
   font-size: 0.75rem;
   word-break: break-all;
-  color: #b8860b;
+  margin-top: 0.5rem;
 }
 
+.url-link a {
+  color: #b8860b;
+  text-decoration: none;
+  border-bottom: 1px dotted #b8860b;
+  transition: 0.2s;
+}
+
+.url-link a:hover {
+  color: #8b6508;
+  border-bottom-style: solid;
+}
+
+/* Team grid - flip cards */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
-.team-card {
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+  cursor: pointer;
+  border: none;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
   text-align: center;
-  border: 1px solid #ece8e0;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
   border-radius: 24px;
-  padding: 1rem;
-  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.team-card img {
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+  position: relative;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 24px;
+  background: white;
+  border: 1px solid #ece8e0;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.flip-front {
+  z-index: 2;
+}
+
+.flip-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #fefcf8;
+}
+
+.flip-front img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
@@ -276,16 +340,25 @@ section {
   background: #e6e3dc;
 }
 
-.team-card h4 {
+.flip-front h4 {
   font-size: 1rem;
   font-weight: 500;
+  margin-bottom: 0.25rem;
 }
 
-.team-card p {
+.flip-front p {
   font-size: 0.75rem;
   color: #6b6a66;
 }
 
+.flip-back p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  padding: 0.5rem;
+  color: #2c2b28;
+}
+
+/* References */
 .ref-list {
   font-size: 0.75rem;
   border-top: 1px solid #ece8e0;
@@ -302,6 +375,7 @@ section {
   margin-bottom: 0.3rem;
 }
 
+/* Lightbox modal */
 .lightbox {
   display: none;
   position: fixed;
@@ -340,6 +414,7 @@ section {
   color: #bbb;
 }
 
+/* Footer */
 footer {
   border-top: 1px solid #ece8e0;
   padding: 2rem 0 1rem;
@@ -348,6 +423,7 @@ footer {
   color: #8a8985;
 }
 
+/* Responsive */
 @media (max-width: 680px) {
   .container {
     padding: 1rem;
@@ -362,5 +438,11 @@ footer {
     top: 15px;
     right: 20px;
     font-size: 30px;
+  }
+  .team-grid {
+    gap: 1rem;
+  }
+  .flip-back p {
+    font-size: 0.75rem;
   }
 }
