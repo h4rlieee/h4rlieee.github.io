@@ -326,3 +326,88 @@
     background: #2980b9;
     transform: translateY(-2px);
 }
+/* Team Section */
+.developers-section {
+    padding: 80px 10%;
+    background: linear-gradient(to bottom, #111, #1a1a1a);
+    color: white;
+    text-align: center;
+    border-radius: 16px;
+    margin: 3rem 0;
+}
+
+.section-header {
+    margin-bottom: 50px;
+}
+
+.small-label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #c9a96e;
+    font-size: 0.8rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+    font-family: "Playfair Display", serif;
+}
+
+.section-desc {
+    color: #bbb;
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.team-card {
+    position: relative;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    transition: 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    border-color: #c9a96e;
+}
+
+.team-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.role-tag {
+    display: inline-block;
+    padding: 5px 12px;
+    background: rgba(201,169,110,0.2);
+    color: #c9a96e;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+}
+
+.card-content h3 {
+    margin: 10px 0;
+    font-size: 1.3rem;
+}
+
+.card-content p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
