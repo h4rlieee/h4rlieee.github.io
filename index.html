@@ -91,15 +91,58 @@
   <div class="qr-block">
     <img src="qr-code.png" alt="QR code to Chronogate">
     <p style="margin-top: 0.5rem; font-size:0.85rem;">📲 Scan to time‑travel</p>
-    <div class="url-link">https://raymondharli.github.io/Grand-Vision-Canal/</div>
+    <div class="url-link">
+      <a href="https://raymondharli.github.io/Grand-Vision-Canal/" target="_blank" rel="noopener noreferrer">
+        https://raymondharli.github.io/Grand-Vision-Canal/
+      </a>
+    </div>
   </div>
 
   <section>
     <h2>Team</h2>
+    <p class="click-hint" style="margin-bottom:1rem;">👥 Click on any team member to see what they worked on</p>
     <div class="team-grid">
-      <div class="team-card"><img src="images/raymond.jpg" alt="Raymond"><h4>Raymond Harlie</h4><p>UX & Development</p></div>
-      <div class="team-card"><img src="images/nelson.jpg" alt="Nelson"><h4>Nelson Lie</h4><p>Research & Development</p></div>
-      <div class="team-card"><img src="images/xiangyu.jpg" alt="XiangYu"><h4>XiangYu Lou</h4><p>History & Content</p></div>
+      <!-- Raymond card (flippable) -->
+      <div class="team-card flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="images/raymond.jpg" alt="Raymond Harlie">
+            <h4>Raymond Harlie</h4>
+            <p>UX & Development</p>
+          </div>
+          <div class="flip-back">
+            <p><strong>Raymond</strong> designed the overall UI/UX flow, and built part of the system.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nelson card -->
+      <div class="team-card flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="images/nelson.jpg" alt="Nelson Lie">
+            <h4>Nelson Lie</h4>
+            <p>Research & Development</p>
+          </div>
+          <div class="flip-back">
+            <p><strong>Nelson</strong> led historical research, verified primary sources, and developed part of the application.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- XiangYu card -->
+      <div class="team-card flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="images/xiangyu.jpg" alt="XiangYu Lou">
+            <h4>XiangYu Lou</h4>
+            <p>History & Content</p>
+          </div>
+          <div class="flip-back">
+            <p><strong>XiangYu</strong> Provided necessary research and information on the Changmen Gate.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -114,7 +157,7 @@
   </div>
 
   <footer>
-    <p>An interactive heritage experience spanning 1,300 years (Tang → Today)<br>Minimal, human‑centered design</p>
+    <p>An interactive heritage experience spanning 1,300 years (Tang → Today)<br>CPT208 . A1~(2)</p>
   </footer>
 </div>
 
@@ -125,7 +168,7 @@
 </div>
 
 <script>
-  // Get all demo images (the <img> inside .demo-img)
+  // ---- Lightbox for demo images ----
   const demoImages = document.querySelectorAll('.demo-img img');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
@@ -139,7 +182,6 @@
     });
   });
 
-  // Close when clicking on the close button or outside the image
   closeBtn.addEventListener('click', () => {
     lightbox.style.display = 'none';
   });
@@ -150,12 +192,12 @@
     }
   });
 
-  // Close with Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && lightbox.style.display === 'flex') {
       lightbox.style.display = 'none';
     }
   });
+
 </script>
 </body>
 </html>
